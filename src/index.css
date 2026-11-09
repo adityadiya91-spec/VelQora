@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #07090E;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Safe area support for modern notch and rounded phones */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1.25rem);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0.75rem);
+}
+
+/* Prevent accidental zoom on mobile input focus */
+@media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+::selection {
+  background-color: #CCFF00;
+  color: #000000;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.velqora-map-tiles {
+  filter: brightness(0.85) contrast(1.1) saturate(1.2);
+}
+
+/* =========================================================================
+   GLOBAL THEME OVERRIDES: WHITE + ORANGE MODE (TOGGLE OFF)
+   Seamlessly transforms all pages (/app, /admin, /driver, /login) to match
+   the Landing Page's sleek White + Orange theme.
+   ========================================================================= */
+html.theme-orange-white body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.theme-orange-white ::selection {
+  background-color: #FF6600 !important;
+  color: #FFFFFF !important;
+}
+
+/* Page Background Overrides */
+html.theme-orange-white .bg-canvas,
+html.theme-orange-white .bg-\[\#07090E\],
+html.theme-orange-white .bg-\[\#0B0E14\],
+html.theme-orange-white .bg-\[\#070a10\],
+html.theme-orange-white .bg-\[\#0B101D\] {
+  background-color: #F8FAFC !important;
+}
+
+/* Card, Panel, and Sidebar Backgrounds */
+html.theme-orange-white .bg-surface,
+html.theme-orange-white .bg-\[\#121622\],
+html.theme-orange-white .bg-\[\#161B26\],
+html.theme-orange-white .bg-\[\#1A2234\],
+html.theme-orange-white .bg-\[\#101522\],
+html.theme-orange-white .bg-\[\#0A0D14\] {
+  background-color: #FFFFFF !important;
+}
+
+/* Semi-transparent Glass Headers & Drawers */
+html.theme-orange-white .bg-\[\#121622\]\/90,
+html.theme-orange-white .bg-\[\#121622\]\/95,
+html.theme-orange-white .bg-\[\#0B0E14\]\/90,
+html.theme-orange-white .bg-\[\#161B26\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #0F172A !important;
+}
+
+/* Subtle surfaces */
+html.theme-orange-white .bg-white\/5 {
+  background-color: #FFF7ED !important;
+}
+
+html.theme-orange-white .bg-white\/10 {
+  background-color: #FFEDD5 !important;
+}
+
+html.theme-orange-white .bg-black\/35,
+html.theme-orange-white .bg-black\/40 {
+  background-color: #FFF7ED !important;
+}
+
+/* Borders & Dividers */
+html.theme-orange-white .border-hairline,
+html.theme-orange-white .border-white\/5,
+html.theme-orange-white .border-white\/10,
+html.theme-orange-white .border-white\/15,
+html.theme-orange-white .border-white\/20,
+html.theme-orange-white .border-white\/25,
+html.theme-orange-white .border-white\/30,
+html.theme-orange-white .divide-white\/5,
+html.theme-orange-white .divide-white\/10,
+html.theme-orange-white .divide-white\/15 {
+  border-color: rgba(255, 102, 0, 0.18) !important;
+}
+
+/* Text Colors */
+html.theme-orange-white .text-ink,
+html.theme-orange-white .text-white {
+  color: #0F172A !important;
+}
+
+html.theme-orange-white .text-muted,
+html.theme-orange-white .text-slate-400,
+html.theme-orange-white .text-slate-300,
+html.theme-orange-white .text-white\/70,
+html.theme-orange-white .text-white\/75,
+html.theme-orange-white .text-white\/80,
+html.theme-orange-white .text-white\/90 {
+  color: #475569 !important;
+}
+
+/* Brand Primary Accent: Electric Lime -> Vibrant Orange */
+html.theme-orange-white .text-primary,
+html.theme-orange-white .text-\[\#CCFF00\] {
+  color: #FF6600 !important;
+}
+
+html.theme-orange-white .bg-\[\#CCFF00\] {
+  background-color: #FF6600 !important;
+  color: #FFFFFF !important;
+}
+
+html.theme-orange-white .bg-\[\#CCFF00\]\/10,
+html.theme-orange-white .bg-\[\#CCFF00\]\/15,
+html.theme-orange-white .bg-\[\#CCFF00\]\/20,
+html.theme-orange-white .bg-\[\#CCFF00\]\/30 {
+  background-color: rgba(255, 102, 0, 0.12) !important;
+  color: #FF6600 !important;
+}
+
+html.theme-orange-white .border-\[\#CCFF00\],
+html.theme-orange-white .border-\[\#CCFF00\]\/30,
+html.theme-orange-white .border-\[\#CCFF00\]\/40 {
+  border-color: rgba(255, 102, 0, 0.4) !important;
+}
+
+/* Ensure text on orange buttons is crisp white */
+html.theme-orange-white .bg-\[\#CCFF00\] *,
+html.theme-orange-white .bg-\[\#CCFF00\] span,
+html.theme-orange-white .bg-\[\#CCFF00\] svg,
+html.theme-orange-white .bg-\[\#FF6600\] *,
+html.theme-orange-white .bg-\[\#FF6600\] span,
+html.theme-orange-white .bg-primary *,
+html.theme-orange-white button.bg-\[\#CCFF00\] {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+/* Form Controls in Orange-White Mode */
+html.theme-orange-white input:not([type="checkbox"]):not([type="radio"]),
+html.theme-orange-white select,
+html.theme-orange-white textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: rgba(255, 102, 0, 0.25) !important;
+}
+
+/* Home Page Hero Card - Keep input boxes seamless/orange without white light overlay */
+.velqora-hero-booking-card input:not([type="checkbox"]):not([type="radio"]),
+.velqora-hero-booking-card select,
+.velqora-hero-booking-card textarea {
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+  color-scheme: dark !important;
+}
+
+.velqora-hero-booking-card input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+html.theme-orange-white .velqora-hero-booking-card span.text-\[\#CCFF00\],
+html.theme-orange-white .velqora-hero-booking-card svg {
+  color: #FFFFFF !important;
+}
+
+html.theme-orange-white select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* Map tiles in light mode */
+html.theme-orange-white .velqora-map-tiles {
+  filter: brightness(1) contrast(1.05) saturate(1.1);
+}
